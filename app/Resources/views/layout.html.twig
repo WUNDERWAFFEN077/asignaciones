@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Asignación de tareas!{% endblock %}</title>
+        {% block stylesheets %}
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}"></link>
+             <!-- Custom CSS -->
+            <link rel="stylesheet" href="{{asset('assets/css/style.css')}}"></link>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+            {{ include ('menu.html.twig') }}
+        {% endblock %}
+        {% block javascripts %}
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+            <!-- Fancy Alert Message-->
+            <script src="{{asset('assets/js/bootbox.min.js')}}"></script>
+        {% endblock %}
+    </body>
+</html>

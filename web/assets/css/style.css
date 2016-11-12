@@ -1,0 +1,141 @@
+/* === GENERAL === */
+
+body{
+	padding-top: 50px;
+	background: url('../img/texture.png') top left repeat;
+}
+
+.wrap{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.header-section{
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	text-align: center;
+}
+
+
+
+h1{
+	font-family: 'graduate', cursive;
+	/*font-family: 'Alegreya Sans SC', sans-serif;*/
+}
+
+h2{
+	font-family: 'pacifico', cursive;
+	/*font-family: 'Gloria Hallelujah', cursive;*/
+}
+
+/* === TITLE & ENROLL === */
+#title-enroll .jumbotron{
+	background: url('../img/mainBackground.png') 50% 0 no-repeat fixed;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	text-align: center;
+	color: white;
+}
+
+/* === WHAT WILL YOU LEARN === */
+
+#what-learn{
+	text-align: center;
+}
+
+/* === COURSE TARGET === */
+
+#course-target{
+	background-color: #BF3E11;
+	color: white;
+}
+
+/* === COURSE FEATURES === */
+
+#course-features{
+	background-color: white;
+	text-align: center;
+}
+
+#course-features i{
+	margin-top: 20px;
+}
+
+/* === INSTRUCTOR === */
+
+#instructor .left-side{
+	text-align: center;
+}
+
+.badge.social{
+	background-color: #95A5A6;
+	font-size: 20px;
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	line-height: 35px;
+	margin-top: 5px;
+	padding: 0;
+	-webkit-border-radius: 35px;
+	-moz-border-radius: 35px;
+	border-radius: 35px;
+	color: white;
+}
+.badge.social.twitter:hover{
+	background-color: #55ACEE;
+}
+.badge.social.linkedin:hover{
+	background-color: #4875B4;
+}
+.badge.social.blog:hover{
+	background-color: #26C281;
+}
+
+/* === PROMOTIONAL VIDEO === */
+
+#promo-video{
+	background: rgba(127,51,191, 0.7);
+	color: white;
+}
+
+/* === FOOTER === */
+
+#footer{
+	padding: 20px;
+	background-color: #22313F;
+	color: white;
+}
+
+#footer a{
+	color: #F5AB35;
+}
+
+#footer a:hover{
+	color: #F9690E;
+}
+
+/* ** lecture.html *** */
+
+/* === DISCUSSIONS === */
+
+#discussions{
+	background-color: white;
+}
+
+#discussions #btn-form, #discussions #btn-form-answer{
+	text-align: right;
+	margin-top: 5px;
+}
+
+/* ** admin_course.html *** */
+
+/* === ADMIN COURSE === */
+
+#admin-course .container{
+	background-color: white;
+	min-height: 600px;
+}
+
+#admin-course .panel-heading a{
+	color: white;
+}
