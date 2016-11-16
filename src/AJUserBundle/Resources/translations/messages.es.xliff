@@ -170,6 +170,116 @@
                 <source>No search results</source>
                 <target>No hay registros</target>
             </trans-unit>
+            
+            <!-- TASKS-->
+            <trans-unit id="43">
+                <source>Tasks</source>
+                <target>Tareas</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>List tasks</source>
+                <target>Listar tareas</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>New task</source>
+                <target>Nueva tarea</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>Title</source>
+                <target>Título</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>Description</source>
+                <target>Descripción</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>Task title</source>
+                <target>Título de tarea</target>
+            </trans-unit>
+            <trans-unit id="49">
+                <source>Task description</source>
+                <target>Descripción de tarea</target>
+            </trans-unit>
+            <trans-unit id="50">
+                <source>Create task</source>
+                <target>Crear tarea</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>Date</source>
+                <target>Fecha</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>The task has been created.</source>
+                <target>La tarea ha sido creado.</target>
+            </trans-unit>
+            <trans-unit id="53">
+                <source>Status</source>
+                <target>Estado</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>Waiting</source>
+                <target>En espera</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Finish</source>
+                <target>Terminado</target>
+            </trans-unit>
+            <trans-unit id="56">
+                <source>The task does not exist.</source>
+                <target>La tarea no existe.</target>
+            </trans-unit>
+            <trans-unit id="57">
+                <source>Edit task</source>
+                <target>Editar tarea</target>
+            </trans-unit>
+            <trans-unit id="58">
+                <source>The task has been modified.</source>
+                <target>La tarea se ha modificado.</target>
+            </trans-unit>
+            <trans-unit id="59">
+                <source>Update task</source>
+                <target>Actualizar tarea</target>
+            </trans-unit>
+            <trans-unit id="60">
+                <source>Delete task</source>
+                <target>Eliminar tarea</target>
+            </trans-unit>
+            <trans-unit id="61">
+                <source>The task has been deleted.</source>
+                <target>La tarea se ha eliminado.</target>
+            </trans-unit>
+            <trans-unit id="62">
+                <source>Please sign in</source>
+                <target>Ingresar</target>
+            </trans-unit>
+            <trans-unit id="63">
+                <source>Sign in</source>
+                <target>Acceder</target>
+            </trans-unit>
+            <trans-unit id="64">
+                <source>Welcome</source>
+                <target>Bienvenido</target>
+            </trans-unit>
+            <trans-unit id="65">
+                <source>Logout</source>
+                <target>Salir</target>
+            </trans-unit>
+            <trans-unit id="66">
+                <source>My tasks</source>
+                <target>Mis tareas</target>
+            </trans-unit>
+            <trans-unit id="67">
+                <source>Finalize</source>
+                <target>Terminar</target>
+            </trans-unit>
+            <trans-unit id="68">
+                <source>The task has been finished.</source>
+                <target>La tarea ha sido finalizado.</target>
+            </trans-unit>
+            <trans-unit id="69">
+                <source>The task was already finished.</source>
+                <target>La tarea ya estaba finalizado.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

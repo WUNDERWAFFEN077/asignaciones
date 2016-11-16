@@ -1,0 +1,44 @@
+aj_user_index:
+    path:     /index
+    defaults: { _controller: AJUserBundle:User:index }
+    
+aj_user_add:
+    path:     /add
+    defaults: { _controller: AJUserBundle:User:add }
+
+aj_user_create:
+    path:     /create
+    defaults: { _controller: AJUserBundle:User:create }
+    methods: POST
+    
+aj_user_edit:
+    path:     /edit/{id}
+    defaults: { _controller: AJUserBundle:User:edit }
+
+aj_user_update:
+    path:     /update/{id}
+    defaults: { _controller: AJUserBundle:User:update }
+    methods: [POST, PUT]
+
+aj_user_view:
+    path:     /view/{id}
+    defaults: { _controller: AJUserBundle:User:view }
+
+aj_user_delete:
+    path:     /delete/{id}
+    defaults: { _controller: AJUserBundle:User:delete }
+    methods: [POST, DELETE]
+    
+aj_user_redirect_add:
+    path:     /create
+    defaults: 
+        _controller: AJUserBundle:User:add 
+        path:   /add
+        permanent: true
+
+aj_user_redirect_edit:
+    path:     /update/{id}
+    defaults: 
+        _controller: AJUserBundle:User:edit 
+        path:   /edit{id}
+        permanent: true        

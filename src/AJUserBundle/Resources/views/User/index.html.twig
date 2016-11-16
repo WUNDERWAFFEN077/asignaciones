@@ -36,14 +36,14 @@
                 {% if pagination | length%}
                 <table class="table table-striped table-hover">
                     <thead>
-                        <th>{{ knp_pagination_sortable(pagination,'Username' | trans, 'u.username') }}</th>
-                        <th>{{ knp_pagination_sortable(pagination,'First name' | trans, 'u.firstName') }}</th>
-                        <th>{{ knp_pagination_sortable(pagination,'Last name' | trans, 'u.lastName') }}</th>
-                        <th>{{ knp_pagination_sortable(pagination,'Email' | trans, 'u.email') }}</th>
-                        <th>{{ knp_pagination_sortable(pagination,'Role' | trans, 'u.role') }}</th>
-                        <th>{{ knp_pagination_sortable(pagination,'Created' | trans, 'u.createdAt') }}</th>
-                        <th>{{ knp_pagination_sortable(pagination,'Updated' | trans, 'u.updateAt') }}</th>
-                        <th>{{'Actions' | trans}}</th>
+                        <th class="text-center">{{ knp_pagination_sortable(pagination,'Username' | trans, 'u.username') }}</th>
+                        <th class="text-center">{{ knp_pagination_sortable(pagination,'First name' | trans, 'u.firstName') }}</th>
+                        <th class="text-center">{{ knp_pagination_sortable(pagination,'Last name' | trans, 'u.lastName') }}</th>
+                        <th class="text-center">{{ knp_pagination_sortable(pagination,'Email' | trans, 'u.email') }}</th>
+                        <th class="text-center">{{ knp_pagination_sortable(pagination,'Role' | trans, 'u.role') }}</th>
+                        <th class="text-center">{{ knp_pagination_sortable(pagination,'Created' | trans, 'u.createdAt') }}</th>
+                        <th class="text-center">{{ knp_pagination_sortable(pagination,'Updated' | trans, 'u.updateAt') }}</th>
+                        <th class="text-center">{{'Actions' | trans}}</th>
                     </thead>
                     <tbody>
                         {% for user in pagination %}

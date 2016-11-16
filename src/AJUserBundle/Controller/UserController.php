@@ -12,6 +12,11 @@ use AJUserBundle\Form\UserType;
 
 class UserController extends Controller
 {
+    public function homeAction(){
+        return $this->render('AJUserBundle:User:home.html.twig');
+    }
+    
+    
     public function indexAction(Request $request)
     {
         $searchQuery = $request->get('q');
@@ -24,7 +29,6 @@ class UserController extends Controller
             $dql = "SELECT u FROM AJUserBundle:User u ORDER BY u.id DESC";
             $users = $em->createQuery($dql);
         }
-        
        
         
         $paginator = $this->get('knp_paginator');
@@ -44,7 +48,7 @@ class UserController extends Controller
     {
         $user = new User();
         $form = $this->createCreateForm($user);
-        //, array('form'=>$form->createView())
+        //, array('form'=>$form->createView())        ;
         return $this->render("AJUserBundle:User:add.html.twig", array('form'=>$form->createView()));
     }
     
@@ -156,7 +160,7 @@ class UserController extends Controller
             }
             
             
-            $em->persist($user);
+            //$em->persist($user);
             $em->flush();
             $successMensaje = $this->get('translator')->trans('The user has been modified.');
             $this->addFlash('mensaje',$successMensaje);
@@ -204,13 +208,7 @@ class UserController extends Controller
     }*/
     
     public function deleteAction($id, Request $request){
-        /*if($request->isXMLHttpRequest()){
-            return new Response(
-                json_encode(array('removed'=>'LOL')),
-                200,
-                array('Content-Type'=>'application/json')
-            );
-        }*/
+       
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository('AJUserBundle:User')->find($id);
         

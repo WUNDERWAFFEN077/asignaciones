@@ -1,48 +1,23 @@
+aj_user_user:
+    resource: "@AJUserBundle/Resources/config/routes/user.yml"
+    prefix:   /user
+
+aj_task_task:
+    resource: "@AJUserBundle/Resources/config/routes/task.yml"
+    prefix:   /task
+    
+#Authentication
 aj_user_homepage:
     path:     /
-    defaults: { _controller: AJUserBundle:Default:index }
-    
-aj_user_index:
-    path:     /user/index
-    defaults: { _controller: AJUserBundle:User:index }
-    
-aj_user_add:
-    path:     /user/add
-    defaults: { _controller: AJUserBundle:User:add }
+    defaults: { _controller: AJUserBundle:User:home }
 
-aj_user_create:
-    path:     /user/create
-    defaults: { _controller: AJUserBundle:User:create }
-    methods: POST
-    
-aj_user_edit:
-    path:     /user/edit/{id}
-    defaults: { _controller: AJUserBundle:User:edit }
+aj_user_login:
+    path:     /login
+    defaults: { _controller: AJUserBundle:Security:login }
 
-aj_user_update:
-    path:     /user/update/{id}
-    defaults: { _controller: AJUserBundle:User:update }
-    methods: [POST, PUT]
+aj_user_login_check:
+    path:     /login_check
+    defaults: { _controller: AJUserBundle:Security:loginCheck }
 
-aj_user_view:
-    path:     /user/view/{id}
-    defaults: { _controller: AJUserBundle:User:view }
-
-aj_user_delete:
-    path:     /user/delete/{id}
-    defaults: { _controller: AJUserBundle:User:delete }
-    methods: [GET, POST, DELETE]
-    
-aj_user_redirect_add:
-    path:     /user/create
-    defaults: 
-        _controller: AJUserBundle:User:add 
-        path:   /user/add
-        permanent: true
-
-aj_user_redirect_edit:
-    path:     /user/update/{id}
-    defaults: 
-        _controller: AJUserBundle:User:edit 
-        path:   /user/edit{id}
-        permanent: true        
+aj_user_logout:
+    path:     /logout
