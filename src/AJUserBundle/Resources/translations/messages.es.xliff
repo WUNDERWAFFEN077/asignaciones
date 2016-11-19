@@ -280,6 +280,14 @@
                 <source>The task was already finished.</source>
                 <target>La tarea ya estaba finalizado.</target>
             </trans-unit>
+            <trans-unit id="70">
+                <source>Search task</source>
+                <target>Buscar tarea</target>
+            </trans-unit>
+            <trans-unit id="71">
+                <source>Password</source>
+                <target>Contraseña</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

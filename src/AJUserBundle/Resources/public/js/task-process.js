@@ -13,8 +13,8 @@ $(function(){
         var data = form.serialize();
         
         $('#button-'+id).addClass('disabled');
-        
         $.post(url, data, function(result){
+            
            $('#button-'+id).removeClass('disabled');
             if(result.processed == 1){
                 $("#message-warning").addClass('hidden');
@@ -30,7 +30,7 @@ $(function(){
             }else{
                 $("#message").addClass('hidden');
                 $("#message-warning").removeClass('hidden');
-                 $("#user-message-warning").html(result.message);
+                $("#user-message-warning").html(result.message);
             }
         }).fail(function(){
             $('#button-'+id).removeClass('disabled');

@@ -22,6 +22,7 @@ class UserController extends Controller
         $searchQuery = $request->get('q');
         
         if(!empty($searchQuery)){
+            $searchQuery = $searchQuery."*";//BUSCAR LOS QUE COINCIDEN CON LA BUSQUEDA PARCIAL O TOTALMENTE
             $finder = $this->container->get('fos_elastica.finder.app.user');
             $users = $finder->createPaginatorAdapter($searchQuery);
         }else{

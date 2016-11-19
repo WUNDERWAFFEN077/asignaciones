@@ -14,9 +14,23 @@ class TaskController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-        $dql = "SELECT t FROM AJUserBundle:Task t ORDER BY t.id DESC";
-        $tasks = $em->createQuery($dql);
+        $searchQuery = $request->get('q');
+        //$searchQuery = new \Elastica\Query\QueryString();
+       
+        
+        if(!empty($searchQuery)){
+            
+            //$searchQuery = "*".$searchQuery."*";//BUSCAR LOS QUE COINCIDEN CON LA BUSQUEDA PARCIAL O TOTALMENTE
+            $finder = $this->container->get('fos_elastica.finder.app.task');
+            $tasks = $finder->createPaginatorAdapter($searchQuery);
+            
+           
+        }else{
+            $em = $this->getDoctrine()->getManager();
+            $dql = "SELECT t FROM AJUserBundle:Task t ORDER BY t.id DESC";
+            $tasks = $em->createQuery($dql);
+        }
+        
         
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -57,7 +71,7 @@ class TaskController extends Controller
         
         $em = $this->getDoctrine()->getManager();
         $task = $em->getRepository('AJUserBundle:Task')->find($id);
-         
+        
         if(!$task){
             $messageException = $this->get('translator')->trans('Task not found.');
             throw $this->createNotFoundException($messageException);
@@ -67,33 +81,37 @@ class TaskController extends Controller
         $form->handleRequest($request);
         
         
-        if($form->isSubmitted() && $form->isValid()){
+        if($form->isSubmitted() && $form->isValid())
+        {
             
-            if($task->getStatus() == 0){
+            $successMessage = $this->get('translator')->trans('The task has been finished.');
+            $warningMessage = $this->get('translator')->trans('La tarea ya estaba finalizado.');
+            
+            if ($task->getStatus() == 0)
+            {
                 $task->setStatus(1);
                 $em->flush();
                 
                 if($request->isXMLHttpRequest())
                 {
-                    $message = $this->get('translator')->trans('The task has been finished.');
                     return new Response(
-                        json_encode(array('processed' => 1,'message'=>$message)),
-                        200,
-                        array('Content-Type' => 'application/json')
-                    );
-                }
-            }else{
-                if($request->isXMLHttpRequest())
-                {
-                    $message = $this->get('translator')->trans('The task was already finished.');
-                    return new Response(
-                        json_encode(array('processed' => 0,'message'=>$message)),
+                        json_encode(array('processed' => 1, 'message' => $successMessage)),
                         200,
                         array('Content-Type' => 'application/json')
                     );
                 }
             }
-            
+            else
+            {
+                if($request->isXMLHttpRequest())
+                {
+                    return new Response(
+                        json_encode(array('processed' => 0, 'message' => $warningMessage)),
+                        200,
+                        array('Content-Type' => 'application/json')
+                    );
+                }            
+            }
         }
         
         
@@ -227,21 +245,10 @@ class TaskController extends Controller
             $em->remove($task);
             $em->flush();
             
-             if($request->isXMLHttpRequest())
-            {
-                $res = $this->deleteUser($user->getRole(), $em, $user);
-                
-                return new Response(
-                    json_encode(array('removed' => $res['removed'], 'message' => $res['message'], 'countUsers' => $countUser)),
-                    200,
-                    array('Content-Type' => 'application/json')
-                );
-            }
+            $successMessage = $this->get('translator')->trans('The task has been deleted.');
+            $this->addFlash('mensaje', $successMessage); 
             
-            $res = $this->deleteUser($user->getRole(),$em,$user);
-            
-            $this->addFlash($res['alert'],$res['message']);
-            return $this->redirectToRoute("aj_user_index");
+            return $this->redirectToRoute('aj_task_index');
         }
         
         //return $this->render("AJUserBundle:Task:edit.html.twig", array('user'=>$user,'form'=>$form->createView()));

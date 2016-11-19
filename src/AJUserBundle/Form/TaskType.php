@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class TaskType extends AbstractType
 {
@@ -29,7 +30,6 @@ class TaskType extends AbstractType
             },
             'choice_label'=>'getFullName'
             ))   
-        
         ->add('save',SubmitType::class,array('label'=>'Save task'))
         ;
     }
